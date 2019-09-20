@@ -14,8 +14,8 @@ function setup() {
     fish[i] = new Fish(random(1, 10) * width * 0.1,       random(1,10) * height * 0.1, random(10) * 0.2);
   }
 
-  //mic = new p5.AudioIn()
-  //mic.start();
+  // mic = new p5.AudioIn()
+  // mic.start();
 
 }
 
