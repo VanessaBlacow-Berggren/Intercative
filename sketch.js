@@ -42,7 +42,7 @@ function draw() {
   drawFrontEar();
   drawFrontPaw();
   drawCatFace();
-}
+  }
 }
 
 
