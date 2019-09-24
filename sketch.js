@@ -1,6 +1,6 @@
 let mic;
 let micLevel;
-// let userClicked = false;
+let userClicked = false;
 
 let fish = [];
 
@@ -14,8 +14,8 @@ function setup() {
     fish[i] = new Fish(random(1, 10) * width * 0.1,       random(1,10) * height * 0.1, random(10) * 0.2);
   }
 
-  mic = new p5.AudioIn()
-  mic.start();
+  // mic = new p5.AudioIn()
+  // mic.start();
 
 }
 
@@ -23,7 +23,7 @@ function setup() {
 function draw() {
   background(220);
 
-  // if (userClicked) {
+  if (userClicked) {
 
   for (i = 0; i < fish.length; i++) {
     fish[i].display();
@@ -31,6 +31,8 @@ function draw() {
   }
 
   micLevel = map(mic.getLevel(0.9), 0, 0.3, 0, 30,     true);
+
+
 
   drawCatTail();
   drawBackPaw()
@@ -40,8 +42,7 @@ function draw() {
   drawFrontEar();
   drawFrontPaw();
   drawCatFace();
-
-  // }
+}
 }
 
 
@@ -225,8 +226,8 @@ function drawCatFace() {
 }
 
 
-// function mouseIsPressed() {
-  // mic = new p5.AudioIn()
-  // mic.start();
-  // userClicked = true;
-// }
+function mouseClicked() {
+  userClicked = true;
+  mic = new p5.AudioIn()
+  mic.start();
+}
